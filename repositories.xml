@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>oli-repo</name>
+    <description>Olis playground</description>
+    <homepage>https://github.com/OliBerlin/gentoo</homepage>
+    <owner type="person">
+      <email>oliver@family-jones.de</email>
+      <name>Oliver Joners</name>
+    </owner>
+    <source type="git">https://github.com/OliBerlin/gentoo.git</source>
+  </repo>
+</repositories>

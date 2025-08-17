@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Assistant
+After=network.target
+
+[Service]
+Type=simple
+User=homeassistant
+Group=homeassistant
+ExecStart=/usr/bin/hass -c /var/lib/homeassistant
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
