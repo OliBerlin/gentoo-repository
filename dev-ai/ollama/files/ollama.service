@@ -1,0 +1,17 @@
+[Unit]
+Description=Ollama LLM runtime
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ollama serve
+Restart=always
+User=ollama
+Group=ollama
+WorkingDirectory=/var/lib/ollama
+Environment=OLLAMA_MODELS=/var/lib/ollama/models
+Environment=OLLAMA_NO_GPU=1
+Environment=OLLAMA_MAX_MEMORY=12GB
+Environment=OLLAMA_CONTEXT_SIZE=4096
+
+[Install]
+WantedBy=multi-user.target
