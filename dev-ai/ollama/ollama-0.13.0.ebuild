@@ -33,11 +33,10 @@ src_install() {
     dobin ollama
     dodoc README.md
 
-    # Arbeitsverzeichnis für Modelle
     keepdir /var/lib/ollama/models
+    fowners ollama:ollama /var/lib/ollama /var/lib/ollama/models
     fperms 0750 /var/lib/ollama /var/lib/ollama/models
 
-    # systemd-Unit installieren
     systemd_dounit "${FILESDIR}/ollama.service"
 }
 
