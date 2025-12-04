@@ -15,7 +15,7 @@ IUSE=""
 # Abhängigkeiten laut VSCodium Build-Doku + jq für get_repo.sh
 DEPEND="
     app-misc/jq
-    dev-lang/node:20
+    dev-lang/node
     dev-lang/python:3.11
     dev-lang/rust
     dev-vcs/git
