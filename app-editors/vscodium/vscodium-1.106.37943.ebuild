@@ -9,7 +9,7 @@ SRC_URI="https://github.com/VSCodium/vscodium/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE=""
 
 # Abhängigkeiten laut VSCodium Build-Doku + jq für get_repo.sh
@@ -34,6 +34,8 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
     default
+    # Patch: rustup-Aufruf entfernen
+    sed -i '/rustup target add/d' build_cli.sh || die
 }
 
 src_compile() {
