@@ -1,4 +1,4 @@
 EAPI=8
 DESCRIPTION="Group for MCP Log Server"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
