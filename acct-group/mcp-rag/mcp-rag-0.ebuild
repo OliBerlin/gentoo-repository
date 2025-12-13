@@ -1,0 +1,4 @@
+EAPI=8
+DESCRIPTION="Group for MCP RAG Server"
+SLOT="0"
+KEYWORDS="~amd64"

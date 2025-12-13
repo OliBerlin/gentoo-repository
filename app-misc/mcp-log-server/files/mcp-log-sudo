@@ -1,0 +1,1 @@
+mcp-log ALL=(root) NOPASSWD: /usr/bin/journalctl, /usr/bin/dmesg

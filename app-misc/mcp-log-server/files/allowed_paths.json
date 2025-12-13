@@ -1,0 +1,9 @@
+[
+  "/etc/portage",
+  "/etc/systemd",
+  "/etc/conf.d",
+  "/etc/ssh",
+  "/etc/fstab",
+  "/etc/hosts",
+  "/etc/resolv.conf"
+]

@@ -1,0 +1,18 @@
+[Unit]
+Description=MCP Log Server
+After=network.target
+
+[Service]
+User=mcp-log
+Group=mcp-log
+Type=simple
+ExecStart=/usr/bin/uvicorn log_mcp:app --host 127.0.0.1 --port 8002
+WorkingDirectory=/usr/libexec/mcp-log-server
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=default.target
