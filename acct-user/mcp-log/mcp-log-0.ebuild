@@ -9,4 +9,4 @@ ACCT_USER_HOME="/usr/libexec/mcp-log-server"
 ACCT_USER_SHELL="/sbin/nologin"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
