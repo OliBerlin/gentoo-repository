@@ -19,7 +19,7 @@ RDEPEND="
 
   ${PYTHON_DEPS}
   dev-python/fastapi[${PYTHON_SINGLE_USEDEP}]
-  dev-python/uvicorn[${PYTHON_SINGLE_USEDEP}]
+  dev-python/uvicorn
   dev-python/pydantic[${PYTHON_SINGLE_USEDEP}]
   dev-python/starlette[${PYTHON_SINGLE_USEDEP}]
   dev-python/anyio[${PYTHON_SINGLE_USEDEP}]
