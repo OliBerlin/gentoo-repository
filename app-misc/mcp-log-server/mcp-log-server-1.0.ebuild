@@ -43,5 +43,9 @@ src_install() {
 }
 
 pkg_postinst() {
-    einfo "MCP Log Server installed with its own Python venv."
+    einfo "Creating virtualenv..."
+    /usr/bin/python3.12 -m venv /usr/libexec/mcp-log-server/venv
+
+    einfo "Installing FastAPI + uvicorn..."
+    /usr/libexec/mcp-log-server/venv/bin/pip install fastapi uvicorn
 }
