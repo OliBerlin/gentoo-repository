@@ -11,3 +11,6 @@ ACCT_USER_SHELL="/sbin/nologin"
 
 SLOT="0"
 KEYWORDS="amd64"
+
+# WICHTIG: dieser Aufruf muss im globalen Bereich stehen
+acct-user_add_deps
