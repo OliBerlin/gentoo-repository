@@ -25,7 +25,7 @@ RDEPEND="
     dev-python/requests[${PYTHON_USEDEP}]
 
     scikit-learn? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-    transformers? ( dev-python/transformers[${PYTHON_USEDEP}] )
+    transformers? ( sci-ml/transformers[${PYTHON_USEDEP}] )
     torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 "
 
