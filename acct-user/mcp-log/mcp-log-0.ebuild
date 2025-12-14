@@ -1,5 +1,5 @@
 EAPI=8
-RDEPEND="acct-group/mcp-log"
+
 inherit acct-user
 
 DESCRIPTION="User for MCP Log Server"
