@@ -1,7 +1,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{10..14} )
-inherit python-single-r1 systemd
+inherit  systemd
 
 DESCRIPTION="MCP Log Server (FastAPI)"
 SLOT="0"
@@ -9,7 +9,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
     ${PYTHON_DEPS}
-    dev-python/virtualenv[${PYTHON_SINGLE_USEDEP}]
+    dev-python/virtualenv
 "
 
 DEPEND="${RDEPEND}"
