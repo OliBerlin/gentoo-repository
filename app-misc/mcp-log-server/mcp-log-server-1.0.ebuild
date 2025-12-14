@@ -22,8 +22,8 @@ RDEPEND="
   dev-python/uvicorn
   dev-python/pydantic
   dev-python/starlette
-  dev-python/anyio[${PYTHON_SINGLE_USEDEP}]
-  dev-python/sniffio[${PYTHON_SINGLE_USEDEP}]
+  dev-python/anyio
+  dev-python/sniffio
 "
 
 S="\${WORKDIR}"
