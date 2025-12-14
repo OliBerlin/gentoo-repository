@@ -1,10 +1,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{11..12} )
-DISTUTILS_SINGLE_IMPL=1
+PYTHON_COMPAT=( python3_{10..12} )
 
-inherit distutils-r1 python-single-r1
+inherit distutils-r1
 
 DESCRIPTION="Sentence Embeddings using Transformers"
 HOMEPAGE="https://www.sbert.net/ https://github.com/UKPLab/sentence-transformers"
@@ -17,21 +16,21 @@ KEYWORDS="amd64"
 IUSE="+transformers +torch +scikit-learn"
 
 RDEPEND="
-    dev-python/numpy
-    dev-python/scipy[${PYTHON_SINGLE_USEDEP}]
-    dev-python/tqdm[${PYTHON_SINGLE_USEDEP}]
-    dev-python/pyyaml[${PYTHON_SINGLE_USEDEP}]
-    sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]
-    dev-python/regex[${PYTHON_SINGLE_USEDEP}]
-    dev-python/requests[${PYTHON_SINGLE_USEDEP}]
+    dev-python/numpy[${PYTHON_USEDEP}]
+    dev-python/scipy[${PYTHON_USEDEP}]
+    dev-python/tqdm[${PYTHON_USEDEP}]
+    dev-python/pyyaml[${PYTHON_USEDEP}]
+    sci-ml/huggingface_hub[${PYTHON_USEDEP}]
+    dev-python/regex[${PYTHON_USEDEP}]
+    dev-python/requests[${PYTHON_USEDEP}]
 
-    scikit-learn? ( dev-python/scikit-learn[${PYTHON_SINGLE_USEDEP}] )
-    transformers? ( dev-python/transformers[${PYTHON_SINGLE_USEDEP}] )
-    torch? ( dev-python/torch[${PYTHON_SINGLE_USEDEP}] )
+    scikit-learn? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
+    transformers? ( dev-python/transformers[${PYTHON_USEDEP}] )
+    torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 "
 
 BDEPEND="
-    dev-python/hatchling[${PYTHON_SINGLE_USEDEP}]
+    dev-python/hatchling[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
