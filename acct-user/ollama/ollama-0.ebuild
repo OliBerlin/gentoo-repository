@@ -10,5 +10,3 @@ ACCT_USER_GROUPS=( ollama )
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-# WICHTIG: dieser Aufruf muss im globalen Bereich stehen
-acct-user_add_deps
