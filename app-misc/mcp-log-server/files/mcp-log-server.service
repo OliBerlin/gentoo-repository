@@ -6,8 +6,10 @@ After=network.target
 User=mcp-log
 Group=mcp-log
 WorkingDirectory=/usr/libexec/mcp-log-server
-ExecStart=/usr/libexec/mcp-log-server/venv/bin/python \
-    /usr/libexec/mcp-log-server/log_mcp.py
+ExecStart=/usr/libexec/mcp-log-server/venv/bin/uvicorn \
+    log_mcp:app \
+    --host 0.0.0.0 \
+    --port 8000
 Restart=always
 
 [Install]
