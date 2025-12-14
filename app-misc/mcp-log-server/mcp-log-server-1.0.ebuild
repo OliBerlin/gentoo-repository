@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS="amd64"
 
 RDEPEND="
-  acct-user/mcp-log
   acct-group/mcp-log
+  acct-user/mcp-log
   ${PYTHON_DEPS}
   dev-python/fastapi[${PYTHON_SINGLE_USEDEP}]
   dev-python/uvicorn[${PYTHON_SINGLE_USEDEP}]
