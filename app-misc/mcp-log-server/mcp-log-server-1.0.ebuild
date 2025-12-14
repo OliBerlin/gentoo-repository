@@ -39,7 +39,7 @@ src_install() {
   newins "${FILESDIR}/mcp-log-sudo" mcp-log
   fperms 0440 /etc/sudoers.d/mcp-log
 
-  systemd_douserunit "${FILESDIR}/mcp-log-server.service"
+  systemd_dounit "${FILESDIR}/mcp-log-server.service"
 }
 
 
