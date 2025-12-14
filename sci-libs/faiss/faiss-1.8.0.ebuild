@@ -22,7 +22,7 @@ RDEPEND="
 
 BDEPEND="
     ${PYTHON_DEPS}
-    dev-util/cmake
+    dev-build/cmake
 "
 
 src_configure() {
