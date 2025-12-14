@@ -6,7 +6,7 @@ PYPROJECT_BACKEND=pdm.backend
 
 PYTHON_COMPAT=( python3_{11..14} )
 
-inherit python-single-r1 systemd
+inherit python-single-r1 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DESCRIPTION="FastAPI framework, high performance, easy to learn"
@@ -16,8 +16,6 @@ SRC_URI="https://files.pythonhosted.org/packages/source/f/fastapi/fastapi-${PV}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64"
-
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
   ${PYTHON_DEPS}
