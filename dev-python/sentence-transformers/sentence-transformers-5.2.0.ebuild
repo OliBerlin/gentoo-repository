@@ -15,7 +15,6 @@ KEYWORDS="amd64"
 
 # Optional heavy deps
 IUSE="+transformers +torch +scikit-learn"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="
     dev-python/numpy[${PYTHON_USEDEP}]
     dev-python/scipy[${PYTHON_USEDEP}]
