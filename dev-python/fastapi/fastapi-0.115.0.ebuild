@@ -20,8 +20,8 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
   ${PYTHON_DEPS}
-  dev-python/starlette[${PYTHON_SINGLE_USEDEP}]
-  dev-python/pydantic[${PYTHON_SINGLE_USEDEP}]
-  dev-python/anyio[${PYTHON_SINGLE_USEDEP}]
-  dev-python/sniffio[${PYTHON_SINGLE_USEDEP}]
+  dev-python/starlette
+  dev-python/pydantic
+  dev-python/anyio
+  dev-python/sniffio
 "
