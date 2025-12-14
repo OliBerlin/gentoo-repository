@@ -1,5 +1,6 @@
 EAPI=8
-DISTUTILS_USE_PEP517=hatchling
+DISTUTILS_USE_PEP517=pdm-backend
+DISTUTILS_UPSTREAM_PEP517=pdm-backend
 
 PYTHON_COMPAT=( python3_{10..14} )
 inherit distutils-r1
@@ -18,3 +19,5 @@ RDEPEND="
   dev-python/anyio[${PYTHON_USEDEP}]
   dev-python/sniffio[${PYTHON_USEDEP}]
 "
+
+PYPROJECT_BACKEND=pdm.backend
