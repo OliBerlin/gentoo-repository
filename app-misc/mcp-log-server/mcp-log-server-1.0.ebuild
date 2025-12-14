@@ -26,6 +26,8 @@ RDEPEND="
   dev-python/sniffio
 "
 
+S="${WORKDIR}"
+
 src_install() {
   insinto /usr/libexec/mcp-log-server
   doins "\${FILESDIR}/log_mcp.py"
