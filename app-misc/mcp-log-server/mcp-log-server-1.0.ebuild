@@ -45,6 +45,6 @@ src_install() {
 
 pkg_postinst() {
   elog "User-Service aktivieren mit:"
-  elog "  systemctl --user enable mcp-log-server.service"
-  elog "  systemctl --user start mcp-log-server.service"
+  elog "  systemctl enable mcp-log-server.service"
+  elog "  systemctl start mcp-log-server.service"
 }
