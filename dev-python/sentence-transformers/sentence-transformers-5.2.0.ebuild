@@ -17,7 +17,7 @@ KEYWORDS="amd64"
 IUSE="+transformers +torch +scikit-learn"
 
 RDEPEND="
-    dev-python/numpy[${PYTHON_SINGLE_USEDEP}]
+    dev-python/numpy
     dev-python/scipy[${PYTHON_SINGLE_USEDEP}]
     dev-python/tqdm[${PYTHON_SINGLE_USEDEP}]
     dev-python/pyyaml[${PYTHON_SINGLE_USEDEP}]
