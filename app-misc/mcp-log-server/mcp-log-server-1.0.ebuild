@@ -30,17 +30,18 @@ S="${WORKDIR}"
 
 src_install() {
   insinto /usr/libexec/mcp-log-server
-  doins "\${FILESDIR}/log_mcp.py"
-  doins "\${FILESDIR}/allowed_paths.json"
+  doins "${FILESDIR}/log_mcp.py"
+  doins "${FILESDIR}/allowed_paths.json"
   fperms +x /usr/libexec/mcp-log-server/log_mcp.py
   fowners -R mcp-log:mcp-log /usr/libexec/mcp-log-server
 
   insinto /etc/sudoers.d
-  newins "\${FILESDIR}/mcp-log-sudo" mcp-log
+  newins "${FILESDIR}/mcp-log-sudo" mcp-log
   fperms 0440 /etc/sudoers.d/mcp-log
 
-  systemd_douserunit "\${FILESDIR}/mcp-log-server.service"
+  systemd_douserunit "${FILESDIR}/mcp-log-server.service"
 }
+
 
 pkg_postinst() {
   elog "User-Service aktivieren mit:"
