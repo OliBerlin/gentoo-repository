@@ -1,6 +1,6 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..14} )
+PYTHON_COMPAT=( python3_{10..13} )
 inherit cmake python-r1
 
 DESCRIPTION="FAISS - Facebook AI Similarity Search (CPU/GPU vector search library)"
