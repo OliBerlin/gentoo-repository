@@ -1,9 +1,9 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{11..14} )
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-inherit python-single-r1 systemd
 
+inherit python-single-r1 systemd
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DESCRIPTION="MCP Log Server for Ollama (FastAPI-based), with /var/log and /etc access"
 HOMEPAGE="https://local"
 SRC_URI=""
