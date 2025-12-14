@@ -3,37 +3,12 @@ Description=MCP Log Server (FastAPI)
 After=network.target
 
 [Service]
-Type=simple
-
-# Der dedizierte User/Group
 User=mcp-log
 Group=mcp-log
-
-# Arbeitsverzeichnis
 WorkingDirectory=/usr/libexec/mcp-log-server
-
-# Startbefehl
-ExecStart=/usr/bin/python3 /usr/libexec/mcp-log-server/log_mcp.py
-
-# Neustart bei Fehlern
-Restart=on-failure
-RestartSec=3
-
-# Sicherheit / Hardening
-NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=full
-ProtectHome=true
-ProtectKernelTunables=true
-ProtectKernelModules=true
-ProtectControlGroups=true
-ProtectClock=true
-LockPersonality=true
-MemoryDenyWriteExecute=true
-
-# Optional: Logging
-StandardOutput=journal
-StandardError=journal
+ExecStart=/usr/libexec/mcp-log-server/venv/bin/python \
+    /usr/libexec/mcp-log-server/log_mcp.py
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
