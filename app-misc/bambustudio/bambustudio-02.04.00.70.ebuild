@@ -17,6 +17,7 @@ DEPEND="
     dev-libs/cereal
     sci-libs/nlopt
     sci-mathematics/cgal
+    sci-libs/opencascade
     dev-cpp/tbb
     X? (
         x11-libs/libX11
