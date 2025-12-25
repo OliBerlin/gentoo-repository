@@ -1,5 +1,6 @@
---- CMakeLists.txt.orig	2025-12-25 20:39:22.057776646 +0100
-+++ CMakeLists.txt	2025-12-25 20:40:38.401764841 +0100
+--- a/src/libslic3r/CMakeLists.txt
++++ b/src/libslic3r/CMakeLists.txt
+
 @@ -495,6 +495,8 @@
  find_package(OpenCV REQUIRED core)
  cmake_policy(POP)
