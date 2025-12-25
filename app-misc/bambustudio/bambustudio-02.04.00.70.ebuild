@@ -91,7 +91,7 @@ S="${WORKDIR}/${P}"
 src_prepare() {
     eapply "${FILESDIR}/boost-shared.patch"
     eapply "${FILESDIR}/glew-shared.patch"
-    #eapply "${FILESDIR}/glfw-pkgconfig.patch"
+    eapply "${FILESDIR}/openvdb-optional.patch"
     cmake_src_prepare
 }
 
