@@ -1,19 +1,16 @@
 --- a/src/libslic3r/CMakeLists.txt
 +++ b/src/libslic3r/CMakeLists.txt
-@@ -35,12 +35,14 @@
+@@ -1,6 +1,10 @@
  # CGAL-based geometry (CutSurface, MeshBoolean, etc.)
- # Upstream assumes old CGAL API; Gentoo CGAL >=5.5 is incompatible.
- 
+
 -add_library(libslic3r_cgal STATIC
 -    MeshBoolean.cpp
 -    CutSurface.cpp
 -)
-+# Gentoo: disable CGAL-based geometry completely
-+message(WARNING "Disabling libslic3r_cgal (CGAL API incompatible on Gentoo)")
++# Gentoo: disable CGAL-based geometry (CGAL API incompatible)
++message(WARNING "Disabling libslic3r_cgal on Gentoo")
 +
 +#add_library(libslic3r_cgal STATIC
 +#    MeshBoolean.cpp
 +#    CutSurface.cpp
 +#)
- 
- # target_link_libraries(libslic3r_cgal PUBLIC CGAL::CGAL)
