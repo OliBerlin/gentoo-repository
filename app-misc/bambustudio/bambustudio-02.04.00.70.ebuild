@@ -102,6 +102,11 @@ src_configure() {
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DBoost_USE_STATIC_LIBS=OFF
         -DGLEW_USE_STATIC_LIBS=OFF
+        -DGLEW_USE_STATIC_LIBS=OFF
+        -DGLEW_LIBRARY=/usr/lib64/libGLEW.so
+        -DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
+        -DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so
+
 
     )
 
