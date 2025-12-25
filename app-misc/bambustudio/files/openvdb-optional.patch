@@ -1,5 +1,5 @@
---- /tmp/CMakeLists.txt.orig	2025-12-25 17:04:41.502403714 +0100
-+++ /tmp/CMakeLists.txt.new	2025-12-25 17:06:56.465825590 +0100
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -586,17 +586,14 @@
      set(USE_BLOSC TRUE)
  endif ()
