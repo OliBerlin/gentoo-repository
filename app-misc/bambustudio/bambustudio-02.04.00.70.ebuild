@@ -82,7 +82,8 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/BambuStudio-${PV}"
+S="${WORKDIR}/${P}"
+
 
 src_prepare() {
     cmake_src_prepare
