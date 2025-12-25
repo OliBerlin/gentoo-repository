@@ -15,6 +15,7 @@ DEPEND="
     dev-build/cmake
     media-libs/glfw
     dev-libs/cereal
+    sci-libs/nlopt
     dev-cpp/tbb
     X? (
         x11-libs/libX11
