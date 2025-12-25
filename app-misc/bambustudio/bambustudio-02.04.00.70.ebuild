@@ -94,10 +94,19 @@ src_prepare() {
     eapply "${FILESDIR}/boost-shared.patch"
     eapply "${FILESDIR}/glew-shared.patch"
     eapply "${FILESDIR}/openvdb-optional.patch"
-    #eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
-
+    if ! use libslic3r-cgal ; then
+        einfo "Disabling libslic3r_cgal (CGAL API incompatible) ..."
+        sed -i \
+            -e 's/^\s*add_library(libslic3r_cgal /#&/' \
+            -e 's/^\s*target_include_directories(libslic3r_cgal /#&/' \
+            -e 's/^\s*target_compile_options(libslic3r_cgal /#&/' \
+            -e 's/^\s*set_property(TARGET libslic3r_cgal /#&/' \
+            -e 's/^\s*target_link_libraries(libslic3r_cgal /#&/' \
+            -e 's/^\s*target_compile_definitions(libslic3r_cgal /#&/' \
+            src/libslic3r/CMakeLists.txt || die
+    fi
     cmake_src_prepare
 }
 
