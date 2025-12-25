@@ -95,7 +95,6 @@ src_prepare() {
     eapply "${FILESDIR}/glew-shared.patch"
     eapply "${FILESDIR}/openvdb-optional.patch"
     use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
-    use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
     if ! use libslic3r-cgal ; then
         einfo "Disabling libslic3r_cgal (CGAL API incompatible) ..."
         sed -i \
