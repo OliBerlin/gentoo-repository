@@ -43,7 +43,7 @@ DEPEND="
 
     webkit? (
         net-libs/libsoup:2.4
-        net-libs/webkit-gtk:4
+        net-libs/webkit-gtk
     )
 
     gstreamer? (
@@ -100,6 +100,7 @@ src_configure() {
         -DUSE_OPENCL=$(usex opencl ON OFF)
         -DUSE_GSTREAMER=$(usex gstreamer ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
+        -DBoost_USE_STATIC_LIBS=OFF
     )
 
     cmake_src_configure
