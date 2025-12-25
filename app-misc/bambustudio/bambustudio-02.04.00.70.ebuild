@@ -13,8 +13,6 @@ IUSE="cuda wayland X webkit gstreamer system-wxwidgets opencl"
 
 DEPEND="
     dev-build/cmake
-    sys-devel/clang
-    sys-devel/llvm
 
     X? (
         x11-libs/libX11
@@ -78,6 +76,7 @@ DEPEND="
     opencl? ( virtual/opencl )
     system-wxwidgets? ( x11-libs/wxGTK:3.2 )
 "
+
 
 
 
