@@ -16,6 +16,7 @@ DEPEND="
     media-libs/glfw
     dev-libs/cereal
     sci-libs/nlopt
+    media-gfx/openvdb
     dev-cpp/tbb
     X? (
         x11-libs/libX11
