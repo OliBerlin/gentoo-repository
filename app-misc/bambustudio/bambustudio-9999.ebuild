@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/bambulab/BambuStudio.git"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64"
 IUSE="cuda"
 
 # Abhängigkeiten laut Linux-Compile-Guide
