@@ -1,16 +1,36 @@
 --- a/src/libslic3r/CMakeLists.txt
 +++ b/src/libslic3r/CMakeLists.txt
-@@ -498,14 +498,16 @@
+@@ -488,6 +488,7 @@
+ 
++# Disable CGAL-based geometry on Gentoo
++set(SKIP_LIBSLIC3R_CGAL ON)
++
+ add_library(libslic3r STATIC ${lisbslic3r_sources}
+     "${CMAKE_CURRENT_BINARY_DIR}/libslic3r_version.h"
+     ${OpenVDBUtils_SOURCES})
+@@ -514,7 +515,9 @@
+ find_package(OpenCV REQUIRED core)
+ cmake_policy(POP)
  
 -add_library(libslic3r_cgal STATIC
--    MeshBoolean.cpp
--    CutSurface.cpp
--)
-+# Gentoo: disable CGAL-based geometry (CGAL API incompatible)
-+message(WARNING "Disabling libslic3r_cgal on Gentoo")
-+
-+#add_library(libslic3r_cgal STATIC
-+#    MeshBoolean.cpp
-+#    CutSurface.cpp
-+#)
++if (NOT SKIP_LIBSLIC3R_CGAL)
++add_library(libslic3r_cgal STATIC
+     CutSurface.hpp CutSurface.cpp
+     IntersectionPoints.hpp IntersectionPoints.cpp
+     MeshBoolean.hpp MeshBoolean.cpp
+@@ -522,6 +525,7 @@
+     Triangulation.hpp Triangulation.cpp)
+ target_include_directories(libslic3r_cgal PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
++endif()
  
+ # Reset compile options of libslic3r_cgal. Despite it being linked privately, CGAL options
+@@ -548,7 +552,9 @@
+ endif()
+ 
+-target_link_libraries(libslic3r_cgal PRIVATE ${_cgal_tgt} libigl mcut)
++if (NOT SKIP_LIBSLIC3R_CGAL)
++target_link_libraries(libslic3r_cgal PRIVATE ${_cgal_tgt} libigl mcut)
++endif()
+ 
+ if (MSVC AND "${CMAKE_SIZEOF_VOID_P}" STREQUAL "4") # 32 bit MSVC workaround
+     target_compile_definitions(libslic3r_cgal PRIVATE CGAL_DO_NOT_USE_MPZF)
