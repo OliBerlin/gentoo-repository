@@ -6,12 +6,3 @@
      # Use static GLEW libraries.
 -    set(GLEW_USE_STATIC_LIBS ON)
 +    set(GLEW_USE_STATIC_LIBS OFF)
-
---- a/deps/OpenCSG/CMakeLists.txt.in
-+++ b/deps/OpenCSG/CMakeLists.txt.in
-@@ -3,7 +3,7 @@
- 
- # Use static GLEW libraries.
- # This is required by upstream OpenCSG.
--set(GLEW_USE_STATIC_LIBS ON)
-+set(GLEW_USE_STATIC_LIBS OFF)
