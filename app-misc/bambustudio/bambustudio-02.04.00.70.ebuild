@@ -74,7 +74,7 @@ DEPEND="
 
     cuda? ( dev-util/nvidia-cuda-toolkit )
     opencl? ( virtual/opencl )
-    system-wxwidgets? ( x11-libs/wxGTK:3.2 )
+    system-wxwidgets? ( x11-libs/wxGTK )
 "
 
 
