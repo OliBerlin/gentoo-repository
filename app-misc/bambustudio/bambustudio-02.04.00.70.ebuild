@@ -13,6 +13,7 @@ IUSE="cuda wayland X webkit gstreamer system-wxwidgets opencl"
 
 DEPEND="
     dev-build/cmake
+    media-libs/glfw
     dev-cpp/tbb
     X? (
         x11-libs/libX11
