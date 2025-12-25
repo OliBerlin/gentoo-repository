@@ -113,10 +113,7 @@ src_configure() {
         -DGLEW_USE_STATIC_LIBS=OFF
         -DGLEW_LIBRARY=/usr/lib64/libGLEW.so
         -DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
-        -DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so
-        -Dglfw3_DIR=/usr \
-        -DGLFW3_INCLUDE_DIR=/usr/include \
-        -DGLFW3_LIBRARY=/usr/$(get_libdir)/libglfw.so)
+        -DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so)
     cmake_src_configure
 }
 
