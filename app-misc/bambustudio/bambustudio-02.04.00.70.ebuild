@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="cuda wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets opencl "
+IUSE="cuda ffmpeg wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets opencl "
 
 DEPEND="
     dev-build/cmake
@@ -94,8 +94,10 @@ src_prepare() {
     eapply "${FILESDIR}/boost-shared.patch"
     eapply "${FILESDIR}/glew-shared.patch"
     eapply "${FILESDIR}/openvdb-optional.patch"
-    eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
-    libslic3r-cgal? eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
+    #eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
+    use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
+    use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
+
     cmake_src_prepare
 }
 
