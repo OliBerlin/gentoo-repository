@@ -83,9 +83,6 @@ DEPEND="
     system-wxwidgets? ( x11-libs/wxGTK )
 "
 
-
-
-
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}"
