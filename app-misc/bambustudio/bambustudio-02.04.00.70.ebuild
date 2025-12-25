@@ -87,7 +87,7 @@ S="${WORKDIR}/${P}"
 src_prepare() {
     eapply "${FILESDIR}/boost-shared.patch"
     eapply "${FILESDIR}/glew-shared.patch"
-    apply "${FILESDIR}/glfw-pkgconfig.patch"
+    eapply "${FILESDIR}/glfw-pkgconfig.patch"
     cmake_src_prepare
 }
 
