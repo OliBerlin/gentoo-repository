@@ -1,15 +1,15 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -380,7 +380,7 @@
+@@ -367,7 +367,7 @@
  
  # Boost
 -set(Boost_USE_STATIC_LIBS ON)
 +set(Boost_USE_STATIC_LIBS OFF)
+
+--- a/src/libslic3r/CMakeLists.txt
++++ b/src/libslic3r/CMakeLists.txt
+@@ -485,7 +485,7 @@
  
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -50,7 +50,7 @@
- 
- # Boost
--set(Boost_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
-+set(Boost_USE_STATIC_LIBS OFF CACHE BOOL "" FORCE)
+ # CGAL / Boost
+-set(CGAL_Boost_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
++set(CGAL_Boost_USE_STATIC_LIBS OFF CACHE BOOL "" FORCE)
