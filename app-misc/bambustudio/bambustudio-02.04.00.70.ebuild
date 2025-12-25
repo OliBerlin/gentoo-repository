@@ -18,6 +18,7 @@ DEPEND="
     sci-libs/nlopt
     sci-mathematics/cgal
     sci-libs/opencascade
+    media-libs/opencv
     dev-cpp/tbb
     X? (
         x11-libs/libX11
