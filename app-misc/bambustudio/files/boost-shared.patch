@@ -1,14 +1,15 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -377,7 +377,7 @@ endif()
-
+@@ -380,7 +380,7 @@
+ 
  # Boost
 -set(Boost_USE_STATIC_LIBS ON)
 +set(Boost_USE_STATIC_LIBS OFF)
-
+ 
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -45,7 +45,7 @@ set(SLIC3R_STATIC ${SLIC3R_STATIC})
+@@ -50,7 +50,7 @@
+ 
  # Boost
 -set(Boost_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
 +set(Boost_USE_STATIC_LIBS OFF CACHE BOOL "" FORCE)
