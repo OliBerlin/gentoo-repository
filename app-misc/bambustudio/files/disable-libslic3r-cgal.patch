@@ -1,20 +1,31 @@
---- a/src/libslic3r/CMakeLists.txt
-+++ b/src/libslic3r/CMakeLists.txt
-
-@@ -495,6 +495,8 @@
- find_package(OpenCV REQUIRED core)
- cmake_policy(POP)
- 
-+set(SKIP_LIBSLIC3R_CGAL ON)
-+if (NOT SKIP_LIBSLIC3R_CGAL)
- add_library(libslic3r_cgal STATIC
-     CutSurface.hpp CutSurface.cpp
-     IntersectionPoints.hpp IntersectionPoints.cpp
-@@ -502,6 +504,7 @@
-     TryCatchSignal.hpp TryCatchSignal.cpp
-     Triangulation.hpp Triangulation.cpp)
- target_include_directories(libslic3r_cgal PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+--- CMakeLists.txt	2025-12-25 20:54:02.899757120 +0100
++++ CMakeLists.txt.patch	2025-12-25 20:54:41.104323225 +0100
+@@ -513,7 +513,7 @@
+     set (_cgal_tgt CGAL::CGAL)
+ endif ()
+ get_target_property(_opts ${_cgal_tgt} INTERFACE_COMPILE_OPTIONS)
+-if (_opts)
++if (_opts AND TARGET libslic3r_cgal)
+     set(_opts_bad "${_opts}")
+     set(_opts_good "${_opts}")
+     list(FILTER _opts_bad INCLUDE REGEX frounding-math)
+@@ -525,11 +525,16 @@
+ if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 14.1)
+     set_property(TARGET libslic3r PROPERTY CXX_STANDARD 17)
+     set_property(TARGET libslic3r PROPERTY CXX_EXTENSIONS OFF)
+-    set_property(TARGET libslic3r_cgal PROPERTY CXX_STANDARD 17)
+-    set_property(TARGET libslic3r_cgal PROPERTY CXX_EXTENSIONS OFF)
++    if (TARGET libslic3r_cgal)
++	set_property(TARGET libslic3r_cgal PROPERTY CXX_STANDARD 17)
++	set_property(TARGET libslic3r_cgal PROPERTY CXX_EXTENSIONS OFF)
++    endif()
 +endif()
++
++if (TARGET libslic3r_cgal)
++   target_link_libraries(libslic3r_cgal PRIVATE ${_cgal_tgt} libigl mcut) 
+ endif()
  
- # Reset compile options of libslic3r_cgal. Despite it being linked privately, CGAL options
- # (-frounding-math) still propagate to dependent libs which is not desired.
+-target_link_libraries(libslic3r_cgal PRIVATE ${_cgal_tgt} libigl mcut)
+ 
+ if (MSVC AND "${CMAKE_SIZEOF_VOID_P}" STREQUAL "4") # 32 bit MSVC workaround
+     target_compile_definitions(libslic3r_cgal PRIVATE CGAL_DO_NOT_USE_MPZF)
