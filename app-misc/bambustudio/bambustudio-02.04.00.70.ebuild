@@ -93,6 +93,7 @@ src_prepare() {
     eapply "${FILESDIR}/boost-shared.patch"
     eapply "${FILESDIR}/glew-shared.patch"
     eapply "${FILESDIR}/openvdb-optional.patch"
+    eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     cmake_src_prepare
 }
 
