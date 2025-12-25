@@ -107,8 +107,8 @@ src_prepare() {
             -e 's/^\s*target_compile_definitions(libslic3r_cgal /#&/' \
             src/libslic3r/CMakeLists.txt || die
     fi
-    sed -i 's|target_include_directories(libslic3r PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}|target_include_directories(libslic3r PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}|' \
-    src/libslic3r/CMakeLists.txt || die
+    sed -i 's|target_include_directories(libslic3r PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}|target_include_directories(libslic3r PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}|' src/libslic3r/CMakeLists.txt || die
+    cp "${S}/src/libslic3r/libslic3r_version.h.in" "${S}/src/libslic3r/libslic3r_version.h"
 
     cmake_src_prepare
 }
