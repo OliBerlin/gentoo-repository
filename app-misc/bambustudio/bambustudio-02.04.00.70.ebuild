@@ -55,7 +55,8 @@ DEPEND="
 
     media-libs/libjpeg-turbo
     media-libs/libpng
-    media-libs/libtiff
+    media-libs/tiff
+
     media-libs/libwebp
     media-libs/libogg
     media-libs/libvorbis
