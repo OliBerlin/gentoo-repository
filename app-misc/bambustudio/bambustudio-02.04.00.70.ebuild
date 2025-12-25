@@ -97,8 +97,9 @@ src_prepare() {
     use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     if ! use libslic3r-cgal ; then
         einfo "Disabling libslic3r_cgal (CGAL API incompatible) ..."
+        sed -i '/add_library(libslic3r_cgal STATIC/,/))/ s/^/#/' \
+            src/libslic3r/CMakeLists.txt || die
         sed -i \
-            -e 's/^\s*add_library(libslic3r_cgal /#&/' \
             -e 's/^\s*target_include_directories(libslic3r_cgal /#&/' \
             -e 's/^\s*target_compile_options(libslic3r_cgal /#&/' \
             -e 's/^\s*set_property(TARGET libslic3r_cgal /#&/' \
