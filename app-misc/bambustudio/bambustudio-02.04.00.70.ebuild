@@ -131,6 +131,7 @@ src_configure() {
         -DGLEW_USE_STATIC_LIBS=OFF
         -DGLEW_LIBRARY=/usr/lib64/libGLEW.so
         -DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
+        -DUSE_CGAL=OFF
         -DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so)
     cmake_src_configure
 }
