@@ -14,6 +14,7 @@ IUSE="cuda wayland X webkit gstreamer system-wxwidgets opencl"
 DEPEND="
     dev-build/cmake
     media-libs/glfw
+    dev-libs/cereal
     dev-cpp/tbb
     X? (
         x11-libs/libX11
@@ -88,7 +89,7 @@ S="${WORKDIR}/${P}"
 src_prepare() {
     eapply "${FILESDIR}/boost-shared.patch"
     eapply "${FILESDIR}/glew-shared.patch"
-    eapply "${FILESDIR}/glfw-pkgconfig.patch"
+    #eapply "${FILESDIR}/glfw-pkgconfig.patch"
     cmake_src_prepare
 }
 
