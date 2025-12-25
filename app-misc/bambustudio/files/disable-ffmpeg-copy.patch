@@ -1,0 +1,15 @@
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -220,6 +220,12 @@ function(bambustudio_copy_sos target config postfix output_sos)
+     endif ()
+ 
+     # Copy shared libraries
++    # Gentoo/Linux: do NOT copy system FFmpeg libraries from /lib
++    if(UNIX AND NOT APPLE)
++        message(WARNING "Skipping FFmpeg .so copying on Linux – using system FFmpeg.")
++        return()
++    endif()
++
+     foreach(so ${output_sos})
+         add_custom_command(
+             TARGET ${target} POST_BUILD
