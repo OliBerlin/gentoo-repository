@@ -19,6 +19,5 @@
 +    slic3r_remap_configs(IlmBase::Half RelWithDebInfo Release)
 +    slic3r_remap_configs(Blosc::blosc RelWithDebInfo Release)
 +else ()
-+    message(WARNING "OpenVDB could not be found with the bundled find module. "
-+                    "Disabling OpenVDB support for this build.")
++    message(WARNING "OpenVDB not found – disabling OpenVDB support for this build.")
 +endif ()
