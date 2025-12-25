@@ -17,9 +17,9 @@ IUSE="cuda"
 # Abhängigkeiten laut Linux-Compile-Guide
 # Quelle: https://github.com/bambulab/BambuStudio/wiki/Linux-Compile-Guide
 DEPEND="
-    dev-util/cmake
-    sys-devel/clang
-    sys-devel/llvm
+    dev-build/cmake
+    llvm-core/clang
+    llvm-core/llvm
     dev-vcs/git
     x11-libs/libX11
     x11-libs/libXext
