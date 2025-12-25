@@ -31,7 +31,7 @@ DEPEND="
     x11-libs/libXcomposite
     x11-libs/libXdamage
     media-libs/mesa
-    media-libs/mesa[egl,wayland,X]
+    media-libs/mesa[X,wayland,opengl]
     media-libs/libglvnd
     dev-libs/wayland
     dev-libs/wayland-protocols
