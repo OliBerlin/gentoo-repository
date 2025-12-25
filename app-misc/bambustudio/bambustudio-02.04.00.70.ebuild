@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="cuda wayland X webkit gstreamer system-wxwidgets opencl"
+IUSE="cuda wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets opencl "
 
 DEPEND="
     dev-build/cmake
@@ -18,7 +18,7 @@ DEPEND="
     sci-libs/nlopt
     sci-mathematics/cgal
     sci-libs/opencascade
-    media-libs/opencv
+    media-libs/opencv[contrib]
     dev-cpp/tbb
     X? (
         x11-libs/libX11
@@ -95,6 +95,7 @@ src_prepare() {
     eapply "${FILESDIR}/glew-shared.patch"
     eapply "${FILESDIR}/openvdb-optional.patch"
     eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
+    libslic3r-cgal? eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
     cmake_src_prepare
 }
 
