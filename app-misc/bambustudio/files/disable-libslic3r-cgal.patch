@@ -1,6 +1,6 @@
 --- a/src/libslic3r/CMakeLists.txt
 +++ b/src/libslic3r/CMakeLists.txt
-@@ -1,6 +1,10 @@
+@@ -1,7 +1,12 @@
  # CGAL-based geometry (CutSurface, MeshBoolean, etc.)
 
 -add_library(libslic3r_cgal STATIC
@@ -14,3 +14,4 @@
 +#    MeshBoolean.cpp
 +#    CutSurface.cpp
 +#)
++
