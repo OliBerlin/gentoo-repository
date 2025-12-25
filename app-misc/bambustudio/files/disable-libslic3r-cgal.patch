@@ -1,5 +1,5 @@
---- CMakeLists.txt	2025-12-25 20:54:02.899757120 +0100
-+++ CMakeLists.txt.patch	2025-12-25 20:54:41.104323225 +0100
+--- a/src/libslic3r/CMakeLists.txt
++++ b/src/libslic3r/CMakeLists.txt
 @@ -513,7 +513,7 @@
      set (_cgal_tgt CGAL::CGAL)
  endif ()
