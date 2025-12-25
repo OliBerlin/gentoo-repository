@@ -55,8 +55,7 @@ DEPEND="
 
     media-libs/libjpeg-turbo
     media-libs/libpng
-    media-libs/tiff
-
+    media-libs/tiff     
     media-libs/libwebp
     media-libs/libogg
     media-libs/libvorbis
@@ -65,7 +64,7 @@ DEPEND="
     media-libs/fontconfig
 
     media-video/ffmpeg
-    media-libs/libx264
+    media-libs/x264
 
     dev-libs/boost
     dev-libs/openssl
