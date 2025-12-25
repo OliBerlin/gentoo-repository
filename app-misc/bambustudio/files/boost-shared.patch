@@ -1,7 +1,10 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -367,7 +367,7 @@
- 
- # Boost
--set(Boost_USE_STATIC_LIBS ON)
-+set(Boost_USE_STATIC_LIBS OFF)
+@@ -365,7 +365,7 @@
+ if(SLIC3R_STATIC)
+     # Use static boost libraries.
+-    set(Boost_USE_STATIC_LIBS ON)
++    set(Boost_USE_STATIC_LIBS OFF)
+     # Use boost libraries linked statically to the C++ runtime.
+     # set(Boost_USE_STATIC_RUNTIME ON)
+ endif()
