@@ -1,15 +1,19 @@
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -220,6 +220,12 @@ function(bambustudio_copy_sos target config postfix output_sos)
-     endif ()
+@@ -204,12 +204,14 @@
  
-     # Copy shared libraries
-+    # Gentoo/Linux: do NOT copy system FFmpeg libraries from /lib
-+    if(UNIX AND NOT APPLE)
-+        message(WARNING "Skipping FFmpeg .so copying on Linux – using system FFmpeg.")
-+        return()
-+    endif()
-+
-     foreach(so ${output_sos})
-         add_custom_command(
-             TARGET ${target} POST_BUILD
+ 
+ else ()
+-    if (NOT APPLE AND NOT FLATPAK)
++    # Gentoo/Linux: do not copy system FFmpeg libraries via bambustudio_copy_sos.
++    # Upstream assumes /lib/libavcodec.so etc., which does not exist on Gentoo.
++    if (NOT APPLE AND NOT FLATPAK AND FALSE)
+         set(output_sos_Release "")
+         set(output_sos_Debug "")
+         add_custom_target(BambuStudioSosCopy ALL DEPENDS BambuStudio)
+         if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+             bambustudio_copy_sos(BambuStudioSosCopy "Debug" "d" output_sos_Debug)
+         else()
+             bambustudio_copy_sos(BambuStudioSosCopy "Release" "" output_sos_Release)
+         endif()
+     endif()
