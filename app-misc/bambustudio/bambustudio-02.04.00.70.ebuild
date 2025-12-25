@@ -101,6 +101,8 @@ src_configure() {
         -DUSE_GSTREAMER=$(usex gstreamer ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DBoost_USE_STATIC_LIBS=OFF
+        -DGLEW_USE_STATIC_LIBS=OFF
+
     )
 
     cmake_src_configure
