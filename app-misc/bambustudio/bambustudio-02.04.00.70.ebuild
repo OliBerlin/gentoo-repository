@@ -68,9 +68,9 @@ DEPEND="
 
     dev-libs/boost
     dev-libs/openssl
-    dev-libs/cairo
-    dev-libs/nasm
-    dev-libs/yasm
+    x11-libs/cairo
+    dev-lang/nasm
+    dev-lang/yasm
 
     cuda? ( dev-util/nvidia-cuda-toolkit )
     opencl? ( virtual/opencl )
