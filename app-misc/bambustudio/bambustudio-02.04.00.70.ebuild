@@ -107,6 +107,7 @@ src_configure() {
         -DBBL_RELEASE_TO_PUBLIC=1
         -DUSE_STATIC_BOOST=OFF
         -DBoost_USE_STATIC_LIBS=OFF
+        -Boost_USE_STATIC_LIBS=OFF
         -DUSE_STATIC_LIBS=OFF
         -DDEP_WX_GTK3=1
         -DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
