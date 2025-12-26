@@ -21,6 +21,7 @@ DEPEND="
     media-gfx/openvdb
     sci-mathematics/cgal
     sci-libs/opencascade
+    x11-libs/wxGTK
 "
 
 #DEPEND="
@@ -87,7 +88,7 @@ DEPEND="
 #
 #    cuda? ( dev-util/nvidia-cuda-toolkit )
 #    opencl? ( virtual/opencl )
-#    system-wxwidgets? ( x11-libs/wxGTK )
+#    system-wxwidgets? (  )
 #"
 
 RDEPEND="${DEPEND}"
