@@ -14,6 +14,7 @@ IUSE="cuda ffmpeg wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets op
 DEPEND="
     dev-build/cmake
     dev-cpp/tbb
+    media-libs/glew
 "
 
 #DEPEND="
@@ -46,7 +47,7 @@ DEPEND="
 #    wayland? ( media-libs/mesa[wayland] )
 #
 #    media-libs/libglvnd
-#    media-libs/glew
+#    
 #
 #    x11-libs/gtk+:3
 #
