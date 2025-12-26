@@ -19,10 +19,11 @@ DEPEND="
     dev-libs/cereal
     sci-libs/nlopt
     media-gfx/openvdb
+    sci-mathematics/cgal
 "
 
 #DEPEND="
-#    sci-mathematics/cgal
+#    
 #    sci-libs/opencascade
 #    media-libs/opencv[contrib]
 #    X? (
