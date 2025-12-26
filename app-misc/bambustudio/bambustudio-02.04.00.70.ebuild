@@ -20,11 +20,12 @@ DEPEND="
     sci-libs/nlopt
     media-gfx/openvdb
     sci-mathematics/cgal
+    sci-libs/opencascade
 "
 
 #DEPEND="
 #    
-#    sci-libs/opencascade
+#    
 #    media-libs/opencv[contrib]
 #    X? (
 #        x11-libs/libX11
