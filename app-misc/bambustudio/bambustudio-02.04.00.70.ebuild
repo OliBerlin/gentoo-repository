@@ -106,7 +106,7 @@ src_configure() {
         -DSLIC3R_GTK=3
         -DBBL_RELEASE_TO_PUBLIC=1
         -DUSE_STATIC_BOOST=OFF
-        -DUSE_STATIC_LIBS=ON
+        -DUSE_STATIC_LIBS=OFF
         -DDEP_WX_GTK3=1
         -DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
         -DUSE_CUDA=$(usex cuda ON OFF)
