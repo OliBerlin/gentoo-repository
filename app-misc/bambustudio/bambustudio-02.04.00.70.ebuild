@@ -13,86 +13,90 @@ IUSE="cuda ffmpeg wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets op
 
 DEPEND="
     dev-build/cmake
-    media-libs/glfw
-    dev-libs/cereal
-    sci-libs/nlopt
-    sci-mathematics/cgal
-    sci-libs/opencascade
-    media-libs/opencv[contrib]
-    dev-cpp/tbb
-    X? (
-        x11-libs/libX11
-        x11-libs/libXext
-        x11-libs/libXrender
-        x11-libs/libXfixes
-        x11-libs/libXcursor
-        x11-libs/libXi
-        x11-libs/libXrandr
-        x11-libs/libXcomposite
-        x11-libs/libXdamage
-    )
-
-    wayland? (
-        dev-libs/wayland
-        dev-libs/wayland-protocols
-        x11-libs/libxkbcommon
-    )
-
-    media-libs/mesa[opengl]
-    X? ( media-libs/mesa[X] )
-    wayland? ( media-libs/mesa[wayland] )
-
-    media-libs/libglvnd
-    media-libs/glew
-
-    x11-libs/gtk+:3
-
-    webkit? (
-        net-libs/libsoup:2.4
-        net-libs/webkit-gtk
-    )
-
-    gstreamer? (
-        media-libs/gstreamer
-        media-libs/gst-plugins-base
-        media-libs/gst-plugins-good
-        media-libs/gst-plugins-bad
-    )
-
-    media-libs/libjpeg-turbo
-    media-libs/libpng
-    media-libs/tiff     
-    media-libs/libwebp
-    media-libs/libogg
-    media-libs/libvorbis
-
-    media-libs/freetype
-    media-libs/fontconfig
-
-    media-video/ffmpeg
-    media-libs/x264
-
-    dev-libs/boost
-    dev-libs/openssl
-    x11-libs/cairo
-    dev-lang/nasm
-    dev-lang/yasm
-
-    cuda? ( dev-util/nvidia-cuda-toolkit )
-    opencl? ( virtual/opencl )
-    system-wxwidgets? ( x11-libs/wxGTK )
 "
+
+#DEPEND="
+#    dev-build/cmake
+#    media-libs/glfw
+#    dev-libs/cereal
+#    sci-libs/nlopt
+#    sci-mathematics/cgal
+#    sci-libs/opencascade
+#    media-libs/opencv[contrib]
+#    dev-cpp/tbb
+#    X? (
+#        x11-libs/libX11
+#        x11-libs/libXext
+#        x11-libs/libXrender
+#        x11-libs/libXfixes
+#        x11-libs/libXcursor
+#        x11-libs/libXi
+#        x11-libs/libXrandr
+#        x11-libs/libXcomposite
+#        x11-libs/libXdamage
+#    )
+#
+#    wayland? (
+#        dev-libs/wayland
+#        dev-libs/wayland-protocols
+#        x11-libs/libxkbcommon
+#    )
+#
+#    media-libs/mesa[opengl]
+#    X? ( media-libs/mesa[X] )
+#    wayland? ( media-libs/mesa[wayland] )
+#
+#    media-libs/libglvnd
+#    media-libs/glew
+#
+#    x11-libs/gtk+:3
+#
+#    webkit? (
+#        net-libs/libsoup:2.4
+#        net-libs/webkit-gtk
+#    )
+#
+#    gstreamer? (
+#        media-libs/gstreamer
+#        media-libs/gst-plugins-base
+#        media-libs/gst-plugins-good
+#        media-libs/gst-plugins-bad
+#    )
+#
+#    media-libs/libjpeg-turbo
+#    media-libs/libpng
+#    media-libs/tiff     
+#    media-libs/libwebp
+#    media-libs/libogg
+#    media-libs/libvorbis
+#
+#    media-libs/freetype
+#    media-libs/fontconfig
+#
+#    media-video/ffmpeg
+#    media-libs/x264
+#
+#    dev-libs/boost
+#    dev-libs/openssl
+#    x11-libs/cairo
+#    dev-lang/nasm
+#   dev-lang/yasm
+#
+#    cuda? ( dev-util/nvidia-cuda-toolkit )
+#    opencl? ( virtual/opencl )
+#    system-wxwidgets? ( x11-libs/wxGTK )
+#"
 
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}"
 
 src_prepare() {
-    eapply "${FILESDIR}/boost-shared.patch"
-    eapply "${FILESDIR}/glew-shared.patch"
-    eapply "${FILESDIR}/openvdb-optional.patch"
-    use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
-    use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
+#    eapply "${FILESDIR}/boost-shared.patch"
+#    eapply "${FILESDIR}/glew-shared.patch"
+#    eapply "${FILESDIR}/openvdb-optional.patch"
+#    use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
+#    use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
     cmake_src_prepare
 }
 
