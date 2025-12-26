@@ -17,12 +17,13 @@ DEPEND="
     media-libs/glew
     media-libs/glfw
     dev-libs/cereal
+    sci-libs/nlopt
 "
 
 #DEPEND="
 #    
 #    
-#    sci-libs/nlopt
+#    
 #    sci-mathematics/cgal
 #    sci-libs/opencascade
 #    media-libs/opencv[contrib]
