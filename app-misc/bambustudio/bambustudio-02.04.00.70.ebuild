@@ -18,12 +18,10 @@ DEPEND="
     media-libs/glfw
     dev-libs/cereal
     sci-libs/nlopt
+    media-gfx/openvdb[cuda]
 "
 
 #DEPEND="
-#    
-#    
-#    
 #    sci-mathematics/cgal
 #    sci-libs/opencascade
 #    media-libs/opencv[contrib]
