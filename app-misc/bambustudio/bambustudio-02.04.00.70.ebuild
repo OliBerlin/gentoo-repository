@@ -15,10 +15,11 @@ DEPEND="
     dev-build/cmake
     dev-cpp/tbb
     media-libs/glew
+    media-libs/glfw
 "
 
 #DEPEND="
-#    media-libs/glfw
+#    
 #    dev-libs/cereal
 #    sci-libs/nlopt
 #    sci-mathematics/cgal
