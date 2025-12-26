@@ -13,17 +13,16 @@ IUSE="cuda ffmpeg wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets op
 
 DEPEND="
     dev-build/cmake
+    dev-cpp/tbb
 "
 
 #DEPEND="
-#    dev-build/cmake
 #    media-libs/glfw
 #    dev-libs/cereal
 #    sci-libs/nlopt
 #    sci-mathematics/cgal
 #    sci-libs/opencascade
 #    media-libs/opencv[contrib]
-#    dev-cpp/tbb
 #    X? (
 #        x11-libs/libX11
 #        x11-libs/libXext
