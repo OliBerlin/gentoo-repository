@@ -16,11 +16,12 @@ DEPEND="
     dev-cpp/tbb
     media-libs/glew
     media-libs/glfw
+    dev-libs/cereal
 "
 
 #DEPEND="
 #    
-#    dev-libs/cereal
+#    
 #    sci-libs/nlopt
 #    sci-mathematics/cgal
 #    sci-libs/opencascade
