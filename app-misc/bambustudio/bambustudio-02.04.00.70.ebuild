@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="cuda ffmpeg wayland X webkit gstreamer -libslic3r-cgal system-wxwidgets opencl "
+IUSE="cuda webkit"
 
 DEPEND="
     dev-build/cmake
@@ -109,20 +109,24 @@ src_configure() {
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
         -DSLIC3R_GTK=3
-        -DBBL_RELEASE_TO_PUBLIC=1
-        -DDEP_WX_GTK3=1
-        -DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
+        -DUSE_SYSTEM_WXWIDGETS=ON  + -DwxWidgets_CONFIG_EXECUTABLE=$(which wx-config || echo /usr/bin/wx-config-3.2-gtk3) 
         -DUSE_CUDA=$(usex cuda ON OFF)
-        -DUSE_OPENCL=$(usex opencl ON OFF)
-        -DUSE_GSTREAMER=$(usex gstreamer ON OFF)
-        -DUSE_WEBKIT=$(usex webkit ON OFF)
-        -DBoost_USE_STATIC_LIBS=OFF
-        -DGLEW_USE_STATIC_LIBS=OFF
-        -DGLEW_USE_STATIC_LIBS=OFF
-        -DGLEW_LIBRARY=/usr/lib64/libGLEW.so
-        -DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
-        -DUSE_CGAL=OFF
-        -DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so)
+    )
+        
+        #-DBBL_RELEASE_TO_PUBLIC=1
+        #-DDEP_WX_GTK3=1
+        #-DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
+        #-DUSE_CUDA=$(usex cuda ON OFF)
+        #-DUSE_OPENCL=$(usex opencl ON OFF)
+        #-DUSE_GSTREAMER=$(usex gstreamer ON OFF)
+        #-DUSE_WEBKIT=$(usex webkit ON OFF)
+        #-DBoost_USE_STATIC_LIBS=OFF
+        #-DGLEW_USE_STATIC_LIBS=OFF
+        #-DGLEW_USE_STATIC_LIBS=OFF
+        #-DGLEW_LIBRARY=/usr/lib64/libGLEW.so
+        #-DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
+        #-DUSE_CGAL=OFF
+        #-DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so)
     cmake_src_configure
 }
 
