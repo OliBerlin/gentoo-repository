@@ -1,0 +1,22 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -586,17 +586,14 @@
+     set(USE_BLOSC TRUE)
+ endif ()
+ 
+-find_package(OpenVDB 5.0 COMPONENTS openvdb)
++find_package(OpenVDB 5.0 COMPONENTS openvdb QUIET)
+ if(OpenVDB_FOUND)
+     slic3r_remap_configs(IlmBase::Half RelWithDebInfo Release)
+     slic3r_remap_configs(Blosc::blosc RelWithDebInfo Release)
+ else ()
+-    message(FATAL_ERROR "OpenVDB could not be found with the bundled find module. "
+-                   "You can try to specify the find module location of your "
+-                   "OpenVDB installation with the OPENVDB_FIND_MODULE_PATH cache variable.")
++    message(WARNING "OpenVDB not found – disabling OpenVDB support for this build.")
+ endif ()
+ 
+-
+ set(TOP_LEVEL_PROJECT_DIR ${PROJECT_SOURCE_DIR})
+ function(bambustudio_copy_dlls target config postfix output_dlls)
+     if ("${CMAKE_SIZEOF_VOID_P}" STREQUAL "8")
