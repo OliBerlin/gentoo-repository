@@ -112,7 +112,7 @@ src_configure() {
         -DDEP_WX_GTK3=1
         -DUSE_CUDA=$(usex cuda ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
-
+        -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config
     )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
