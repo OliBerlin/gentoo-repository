@@ -111,15 +111,16 @@ src_configure() {
         -DUSE_SYSTEM_WXWIDGETS=ON
         -DDEP_WX_GTK3=1
         -DUSE_CUDA=$(usex cuda ON OFF)
+        -DUSE_WEBKIT=$(usex webkit ON OFF)
+
     )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
-        #-DDEP_WX_GTK3=1
         #-DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
         #-DUSE_CUDA=$(usex cuda ON OFF)
         #-DUSE_OPENCL=$(usex opencl ON OFF)
         #-DUSE_GSTREAMER=$(usex gstreamer ON OFF)
-        #-DUSE_WEBKIT=$(usex webkit ON OFF)
+        #
         #-DBoost_USE_STATIC_LIBS=OFF
         #-DGLEW_USE_STATIC_LIBS=OFF
         #-DGLEW_USE_STATIC_LIBS=OFF
