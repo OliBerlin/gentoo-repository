@@ -109,7 +109,7 @@ src_configure() {
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
         -DSLIC3R_GTK=3
-        -DUSE_SYSTEM_WXWIDGETS=ON  + -DwxWidgets_CONFIG_EXECUTABLE=$(which wx-config || echo /usr/bin/wx-config-3.2-gtk3) 
+        -DUSE_SYSTEM_WXWIDGETS=ON
         -DUSE_CUDA=$(usex cuda ON OFF)
     )
         
