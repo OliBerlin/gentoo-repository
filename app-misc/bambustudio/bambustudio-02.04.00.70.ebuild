@@ -99,7 +99,7 @@ S="${WORKDIR}/${P}"
 src_prepare() {
 #    eapply "${FILESDIR}/boost-shared.patch"
 #    eapply "${FILESDIR}/glew-shared.patch"
-    eapply "${FILESDIR}/openvdb-update-min-cmake-version.patch"
+    #eapply "${FILESDIR}/openvdb-update-min-cmake-version.patch"
 #    use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
 #    use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
     cmake_src_prepare
