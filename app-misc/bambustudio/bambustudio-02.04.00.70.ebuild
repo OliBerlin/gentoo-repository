@@ -21,7 +21,7 @@ DEPEND="
     media-gfx/openvdb
     sci-mathematics/cgal
     sci-libs/opencascade
-    x11-libs/wxGTK:3.2
+    x11-libs/wxGTK:3.2-gtk3
 "
 
 #DEPEND="
