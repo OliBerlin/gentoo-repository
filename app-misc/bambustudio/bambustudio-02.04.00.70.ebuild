@@ -111,6 +111,8 @@ src_configure() {
         -DUSE_CUDA=$(usex cuda ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -D CMAKE_POLICY_VERSION_MINIMUM=3.5
+        -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-3.2 
+
     )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
