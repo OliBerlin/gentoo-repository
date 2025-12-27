@@ -108,7 +108,8 @@ src_prepare() {
 src_configure() {
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
-        -DUSE_SYSTEM_WXWIDGETS=OFF
+        -DUSE_SYSTEM_WXWIDGETS=ON
+        -DDEP_WX_GTK3=1
         -DUSE_CUDA=$(usex cuda ON OFF)
     )
         
