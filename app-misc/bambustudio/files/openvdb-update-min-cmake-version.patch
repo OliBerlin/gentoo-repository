@@ -1,0 +1,11 @@
+*** Begin Patch
+*** Update File: cmake/modules/FindOpenVDB.cmake
+@@
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.5)
++
++# Ensure modern policy handling for newer CMake versions
++if(POLICY CMP0070)
++  cmake_policy(SET CMP0070 NEW)
++endif()
+*** End Patch

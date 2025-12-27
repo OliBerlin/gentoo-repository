@@ -97,9 +97,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
-#    eapply "${FILESDIR}/boost-shared.patch"
-#    eapply "${FILESDIR}/glew-shared.patch"
-#    eapply "${FILESDIR}/openvdb-optional.patch"
+    eapply "${FILESDIR}/openvdb-update-min-cmake-version.patch"
 #    use ffmpeg || eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
 #    use libslic3r-cgal || eapply "${FILESDIR}/disable-libslic3r-cgal.patch"
     cmake_src_prepare
@@ -108,12 +106,9 @@ src_prepare() {
 src_configure() {
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
-        -DUSE_SYSTEM_WXWIDGETS=ON
-        -DDEP_WX_GTK3=1
         -DUSE_CUDA=$(usex cuda ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config
-        -D CMAKE_POLICY_VERSION_MINIMUM=3.5
     )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
