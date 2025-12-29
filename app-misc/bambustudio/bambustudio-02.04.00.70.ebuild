@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="cuda ffmpeg webkit"
+IUSE="cuda +ffmpeg webkit"
 
 DEPEND="
     dev-build/cmake
