@@ -104,14 +104,10 @@ src_prepare() {
 src_configure() {
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
+        -DSLIC3R_GTK=3
         -DUSE_CUDA=$(usex cuda ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-        -DUSE_SYSTEM_WXWIDGETS=ON
-        -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-3.2 
-        -DwxWidgets_USE_UNICODE=ON 
-        -DwxWidgets_USE_STATIC=OFF 
-        -DwxWidgets_COMPONENTS="core;base;html;xrc;net;xml"
     )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
