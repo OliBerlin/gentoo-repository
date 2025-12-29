@@ -98,6 +98,7 @@ S="${WORKDIR}/${P}"
 
 src_prepare() {
     eapply "${FILESDIR}/openvdb-optional.patch"
+    eapply "${FILESDIR}/ffmpeg-copy.patch"
     cmake_src_prepare
 }
 

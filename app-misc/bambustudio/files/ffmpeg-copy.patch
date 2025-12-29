@@ -1,0 +1,21 @@
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -226,11 +226,11 @@ function(bambustudio_copy_sos target)
+     # FFmpeg libs
+-    set(FFMPEG_LIBS
+-        /lib/libavcodec.so
+-        /lib/libavformat.so
+-        /lib/libavutil.so
+-        /lib/libswscale.so
+-        /lib/libswresample.so
+-    )
++    set(FFMPEG_LIBS
++        /usr/lib64/libavcodec.so
++        /usr/lib64/libavformat.so
++        /usr/lib64/libavutil.so
++        /usr/lib64/libswscale.so
++        /usr/lib64/libswresample.so
++    )
+ 
+     file(COPY ${FFMPEG_LIBS} DESTINATION ${CMAKE_BINARY_DIR}/lib)
+ endfunction()
