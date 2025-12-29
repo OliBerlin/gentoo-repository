@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="cuda +ffmpeg webkit"
+IUSE="-ffmpeg"
 
 DEPEND="
     dev-build/cmake
@@ -112,14 +112,12 @@ src_prepare() {
 
 
 src_configure() {
-    $(cmake_use_find_package ffmpeg FFMPEG)
+    $(cmake_use_find_package ffmpeg ffmpeg)
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
         -DSLIC3R_GTK=3
-        -DUSE_CUDA=$(usex cuda ON OFF)
-        -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-        -DUSE_CGAL=ON
+ 
         )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
