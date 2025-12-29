@@ -9,10 +9,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="-ffmpeg"
+IUSE="ffmpeg opencv"
 
 DEPEND="
     dev-build/cmake
+media-libs/opencv[contrib]
     media-video/ffmpeg
     dev-cpp/tbb
     media-libs/glew
@@ -24,75 +25,7 @@ DEPEND="
     sci-libs/opencascade
     x11-libs/wxGTK
     media-libs/qhull
-
 "
-
-#DEPEND="
-#    
-#    
-#    media-libs/opencv[contrib]
-#    X? (
-#        x11-libs/libX11
-#        x11-libs/libXext
-#        x11-libs/libXrender
-#        x11-libs/libXfixes
-#        x11-libs/libXcursor
-#        x11-libs/libXi
-#        x11-libs/libXrandr
-#        x11-libs/libXcomposite
-#        x11-libs/libXdamage
-#    )
-#
-#    wayland? (
-#        dev-libs/wayland
-#        dev-libs/wayland-protocols
-#        x11-libs/libxkbcommon
-#    )
-#
-#    media-libs/mesa[opengl]
-#    X? ( media-libs/mesa[X] )
-#    wayland? ( media-libs/mesa[wayland] )
-#
-#    media-libs/libglvnd
-#    
-#
-#    x11-libs/gtk+:3
-#
-#    webkit? (
-#        net-libs/libsoup:2.4
-#        net-libs/webkit-gtk
-#    )
-#
-#    gstreamer? (
-#        media-libs/gstreamer
-#        media-libs/gst-plugins-base
-#        media-libs/gst-plugins-good
-#        media-libs/gst-plugins-bad
-#    )
-#
-#    media-libs/libjpeg-turbo
-#    media-libs/libpng
-#    media-libs/tiff     
-#    media-libs/libwebp
-#    media-libs/libogg
-#    media-libs/libvorbis
-#
-#    media-libs/freetype
-#    media-libs/fontconfig
-#
-#    media-video/ffmpeg
-#    media-libs/x264
-#
-#    dev-libs/boost
-#    dev-libs/openssl
-#    x11-libs/cairo
-#    dev-lang/nasm
-#   dev-lang/yasm
-#
-#    cuda? ( dev-util/nvidia-cuda-toolkit )
-#    opencl? ( virtual/opencl )
-#    system-wxwidgets? (  )
-#"
 
 RDEPEND="${DEPEND}"
 
@@ -110,34 +43,21 @@ src_prepare() {
     if ! use ffmpeg; then
         eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     fi
-
-
     cmake_src_prepare
 }
 
-
 src_configure() {
     $(cmake_use_find_package ffmpeg ffmpeg)
+    $(cmake_use_find_package opencv opencv)
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
+        -DSLIC3R_FHS=1
         -DSLIC3R_GTK=3
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+        -DOpenCV_INCLUDE_DIRS=/usr/include/opencv4
+        -DOpenCV_DIR=/usr/lib64/cmake/opencv4
  
-        )
-        
-        #-DBBL_RELEASE_TO_PUBLIC=1
-        #-DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
-        #-DUSE_CUDA=$(usex cuda ON OFF)
-        #-DUSE_OPENCL=$(usex opencl ON OFF)
-        #-DUSE_GSTREAMER=$(usex gstreamer ON OFF)
-        #
-        #-DBoost_USE_STATIC_LIBS=OFF
-        #-DGLEW_USE_STATIC_LIBS=OFF
-        #-DGLEW_USE_STATIC_LIBS=OFF
-        #-DGLEW_LIBRARY=/usr/lib64/libGLEW.so
-        #-DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
-        #
-        #-DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so)
+    )
     cmake_src_configure
 }
 

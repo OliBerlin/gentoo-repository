@@ -1,8 +1,0 @@
---- a/src/libslic3r/CMakeLists.txt
-+++ b/src/libslic3r/CMakeLists.txt
-@@ -1,3 +1,7 @@
-+# Gentoo: Warnings dürfen keine Errors sein
-+add_compile_options(-Wno-error=return-type)
-+add_compile_options(-Wno-error)
-+
- # Rest der Datei unverändert
