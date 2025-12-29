@@ -118,7 +118,7 @@ src_configure() {
         -DUSE_CUDA=$(usex cuda ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-    )
+    )   -DUSE_CGAL=ON
         
         #-DBBL_RELEASE_TO_PUBLIC=1
         #-DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
@@ -131,7 +131,7 @@ src_configure() {
         #-DGLEW_USE_STATIC_LIBS=OFF
         #-DGLEW_LIBRARY=/usr/lib64/libGLEW.so
         #-DGLEW_LIBRARIES=/usr/lib64/libGLEW.so
-        #-DUSE_CGAL=OFF
+        #
         #-DGLEW_SHARED_LIBRARY=/usr/lib64/libGLEW.so)
     cmake_src_configure
 }
