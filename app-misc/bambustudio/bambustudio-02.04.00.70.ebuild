@@ -109,6 +109,7 @@ src_prepare() {
     if ! use ffmpeg; then
         eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     fi
+    filter-flags -Werror -Werror=return-type
 
     cmake_src_prepare
 }
