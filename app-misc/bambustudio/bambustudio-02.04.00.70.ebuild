@@ -119,7 +119,8 @@ src_configure() {
         -DUSE_CUDA=$(usex cuda ON OFF)
         -DUSE_WEBKIT=$(usex webkit ON OFF)
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-        -DUSE_CGAL=ON)
+        -DUSE_CGAL=ON
+        )
         
         #-DBBL_RELEASE_TO_PUBLIC=1
         #-DUSE_SYSTEM_WXWIDGETS=$(usex system-wxwidgets ON OFF)
