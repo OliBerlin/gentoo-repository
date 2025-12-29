@@ -102,7 +102,9 @@ src_prepare() {
     # apply OpenVDB patch always
     eapply "${FILESDIR}/openvdb-optional.patch"
     eapply "${FILESDIR}/disable-internal-qhull.patch"
-    eapply "${FILESDIR}/disable-werror.patch"
+  
+    eapply "${FILESDIR}/disable-werror-clipper2.patch" 
+    eapply "${FILESDIR}/disable-werror-earcut.patch"
     # apply FFmpeg-disable patch only when USE=-ffmpeg
     if ! use ffmpeg; then
         eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
