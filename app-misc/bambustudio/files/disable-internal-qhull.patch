@@ -1,0 +1,9 @@
+--- a/src/sqhull/CMakeLists.txt
++++ b/src/qhull/CMakeLists.txt
+@@ -1,6 +1,8 @@
+ # Disable internal Qhull on Gentoo
++set(USE_INTERNAL_QHULL OFF CACHE BOOL "" FORCE)
++
+ if (USE_INTERNAL_QHULL)
+     add_subdirectory(qhull)
+ endif()

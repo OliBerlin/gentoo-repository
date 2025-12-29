@@ -101,6 +101,7 @@ S="${WORKDIR}/${P}"
 src_prepare() {
     # apply OpenVDB patch always
     eapply "${FILESDIR}/openvdb-optional.patch"
+    eapply "${FILESDIR}/disable-internal-qhull.patch"
 
     # apply FFmpeg-disable patch only when USE=-ffmpeg
     if ! use ffmpeg; then
