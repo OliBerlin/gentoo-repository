@@ -1,5 +1,5 @@
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -226,11 +226,11 @@ function(bambustudio_copy_sos target)
      # FFmpeg libs
 -    set(FFMPEG_LIBS
