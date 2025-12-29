@@ -9,10 +9,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 
-IUSE="cuda webkit"
+IUSE="cuda ffmpeg webkit"
 
 DEPEND="
     dev-build/cmake
+    media-video/ffmpeg
     dev-cpp/tbb
     media-libs/glew
     media-libs/glfw
@@ -98,11 +99,12 @@ S="${WORKDIR}/${P}"
 
 src_prepare() {
     eapply "${FILESDIR}/openvdb-optional.patch"
-    eapply "${FILESDIR}/ffmpeg-copy.patch"
+    #eapply "${FILESDIR}/ffmpeg-copy.patch"
     cmake_src_prepare
 }
 
 src_configure() {
+    $(cmake_use_find_package ffmpeg FFMPEG)
     local mycmakeargs=(
         -DSLIC3R_STATIC=OFF
         -DSLIC3R_GTK=3
