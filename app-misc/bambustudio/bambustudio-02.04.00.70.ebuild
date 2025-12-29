@@ -99,6 +99,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
+        filter-flags -Werror -Werror=return-type
     # apply OpenVDB patch always
     eapply "${FILESDIR}/openvdb-optional.patch"
     eapply "${FILESDIR}/disable-internal-qhull.patch"
@@ -109,7 +110,7 @@ src_prepare() {
     if ! use ffmpeg; then
         eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
     fi
-    filter-flags -Werror -Werror=return-type
+
 
     cmake_src_prepare
 }
