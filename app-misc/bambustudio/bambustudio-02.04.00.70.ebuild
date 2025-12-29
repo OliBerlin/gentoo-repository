@@ -98,10 +98,17 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
+    # apply OpenVDB patch always
     eapply "${FILESDIR}/openvdb-optional.patch"
-    #eapply "${FILESDIR}/ffmpeg-copy.patch"
+
+    # apply FFmpeg-disable patch only when USE=-ffmpeg
+    if ! use ffmpeg; then
+        eapply "${FILESDIR}/disable-ffmpeg-copy.patch"
+    fi
+
     cmake_src_prepare
 }
+
 
 src_configure() {
     $(cmake_use_find_package ffmpeg FFMPEG)
