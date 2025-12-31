@@ -25,6 +25,7 @@ media-libs/opencv[contrib]
     sci-libs/opencascade
     x11-libs/wxGTK
     media-libs/qhull
+    >=dev-cpp/eigen-3.3
 "
 
 RDEPEND="${DEPEND}"
@@ -57,10 +58,10 @@ src_configure() {
         -DSLIC3R_WX_STABLE=0
         -DSLIC3R_GTK=3
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-        -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-3.2 
-    #    -DwxWidgets_USE_UNICODE=ON 
-     #   -DwxWidgets_USE_STATIC=OFF 
-     #   -DwxWidgets_COMPONENTS="core;base;html;xrc;net;xml"
+        -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-3.2
+        -DwxWidgets_USE_UNICODE=1 
+        -DwxWidgets_USE_STATIC=OFF 
+        -DwxWidgets_COMPONENTS="core;base;html;xrc;net;xml"
      #   -DOpenCV_INCLUDE_DIRS=/usr/include/opencv4
      #   -DOpenCV_DIR=/usr/lib64/cmake/opencv4
  
