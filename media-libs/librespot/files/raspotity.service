@@ -1,0 +1,13 @@
+[Unit]
+Description=Raspotify (librespot wrapper)
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+ExecStart=/usr/bin/raspotify
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
