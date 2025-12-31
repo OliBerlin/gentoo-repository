@@ -5,7 +5,7 @@ DESCRIPTION="Open source Spotify client library (librespot)"
 HOMEPAGE="https://github.com/librespot-org/librespot"
 EGIT_REPO_URI="https://github.com/librespot-org/librespot.git"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 LICENSE="MIT"
 IUSE="alsa pulseaudio jack +pipewire examples"
