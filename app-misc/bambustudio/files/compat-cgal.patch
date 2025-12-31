@@ -1,0 +1,24 @@
+*** Begin Patch
+*** Update File: src/libslic3r/CutSurface.cpp
+@@
+-    const EdgeShapeMap& edge_shape_map = cgal_shape.property_map<EI, IntersectingElement>(edge_shape_map_name).first;
++    const EdgeShapeMap& edge_shape_map = cgal_shape.property_map<EI, IntersectingElement>(edge_shape_map_name).value();
+@@
+-    const FaceShapeMap& face_shape_map = cgal_shape.property_map<FI, IntersectingElement>(face_shape_map_name).first;
++    const FaceShapeMap& face_shape_map = cgal_shape.property_map<FI, IntersectingElement>(face_shape_map_name).value();
+@@
+-    const VertexShapeMap &vert_shape_map = mesh.property_map<VI, const IntersectingElement*>(vert_shape_map_name).first;
++    const VertexShapeMap &vert_shape_map = mesh.property_map<VI, const IntersectingElement*>(vert_shape_map_name).value();
+@@
+-    const EdgeBoolMap &ecm = mesh.property_map<EI, bool>(is_constrained_edge_name).first;
++    const EdgeBoolMap &ecm = mesh.property_map<EI, bool>(is_constrained_edge_name).value();
+@@
+-    const CvtVI2VI& cvt = patch.mesh.property_map<VI, VI>(patch_source_name).first;
++    const CvtVI2VI& cvt = patch.mesh.property_map<VI, VI>(patch_source_name).value();
+@@
+-    const VertexShapeMap &vert_shape_map = model.property_map<VI, const IntersectingElement *>(vert_shape_map_name).first;
++    const VertexShapeMap &vert_shape_map = model.property_map<VI, const IntersectingElement *>(vert_shape_map_name).value();
+@@
+-using Traits    = CGAL::AABB_traits<EpicKernel, Primitive>;
++using Traits    = CGAL::AABB_traits_3<EpicKernel, Primitive>;
+*** End Patch
