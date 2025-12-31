@@ -10,7 +10,7 @@ KEYWORDS="~amd64"
 LICENSE="MIT"
 IUSE="alsa pulseaudio jack +pipewire examples"
 
-DEPEND="dev-lang/rust dev-rust/cargo sys-devel/gcc dev-libs/openssl dev-vcs/git"
+DEPEND="dev-lang/rust dev-util/cargo-c sys-devel/gcc dev-libs/openssl dev-vcs/git"
 RDEPEND="${DEPEND}
     media-libs/alsa-lib 
     media-sound/pulseaudio
