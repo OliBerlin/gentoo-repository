@@ -153,7 +153,7 @@ src_unpack() {
 
 src_prepare() {
 	pushd "builds/cuda_nvcc/targets/${narch}-linux/include" >/dev/null || die
-	eapply "${FILESDIR}/12.9.2-backport-glibc-2.43-fixes-from-13.2.1.patch"
+	#eapply "${FILESDIR}/12.9.2-backport-glibc-2.43-fixes-from-13.2.1.patch"
 	popd >/dev/null || die
 
 	default
