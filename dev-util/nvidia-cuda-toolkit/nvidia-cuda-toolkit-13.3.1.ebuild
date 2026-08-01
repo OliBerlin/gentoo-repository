@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{12..14} )
 inherit check-reqs edo toolchain-funcs
 inherit python-r1
 
-DRIVER_PV="575.57.08"
+DRIVER_PV="610.43.02"
 GCC_MAX_VER="14"
 CLANG_MAX_VER="19"
 
